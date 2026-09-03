@@ -1,0 +1,313 @@
+/* CALENDÁRIO E EVENTOS — Navegação mensal, dias, evento selecionado, lista de eventos e cores das categorias. */
+.events-section > .section-heading {
+  margin-bottom: 58px;
+}
+
+.calendar-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 18px;
+}
+
+.calendar-panel,
+.event-list {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.calendar-panel {
+  padding: 28px;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.calendar-header > div > span,
+.event-list-header,
+.panel-header > div > span,
+.spotlight-top span {
+  color: #718aa9;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.calendar-header h3 {
+  margin: 7px 0 0;
+  font-size: 25px;
+  letter-spacing: -0.04em;
+}
+
+.calendar-header h3 strong {
+  color: #7892b4;
+  font-weight: 450;
+}
+
+.calendar-controls {
+  display: flex;
+  gap: 7px;
+}
+
+.calendar-controls button,
+.selected-event > button,
+.school-team-card > button,
+.back-top,
+.modal-close {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  border: 1px solid rgba(128, 207, 255, 0.15);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.calendar-controls button:hover,
+.selected-event > button:hover,
+.school-team-card > button:hover,
+.back-top:hover,
+.modal-close:hover {
+  border-color: rgba(94, 221, 255, 0.4);
+  background: rgba(44, 125, 255, 0.15);
+  transform: rotate(4deg) scale(1.04);
+}
+
+.calendar-controls button:disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.weekdays,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.weekdays {
+  margin-bottom: 8px;
+}
+
+.weekdays span {
+  padding: 6px 0;
+  color: #5f7795;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+  text-align: center;
+}
+
+.calendar-day,
+.empty-day {
+  position: relative;
+  display: grid;
+  min-height: 51px;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: #92a8c1;
+  background: rgba(255, 255, 255, 0.017);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+}
+
+button.calendar-day {
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.calendar-day.has-event {
+  color: #fff;
+  background: rgba(35, 102, 225, 0.12);
+}
+
+.calendar-day.has-event i {
+  position: absolute;
+  bottom: 7px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--event-color, var(--cyan));
+  box-shadow: 0 0 8px var(--event-color, var(--cyan));
+}
+
+.calendar-day.has-event:hover,
+.calendar-day.has-event.is-selected {
+  border-color: color-mix(in srgb, var(--event-color, var(--cyan)) 50%, transparent);
+  background: color-mix(in srgb, var(--event-color, var(--cyan)) 13%, transparent);
+  transform: translateY(-2px);
+}
+
+.event-cyan { --event-color: var(--cyan); }
+.event-violet { --event-color: var(--violet); }
+.event-blue { --event-color: #568cff; }
+
+.selected-event {
+  display: grid;
+  grid-template-columns: 61px 1fr 40px;
+  align-items: center;
+  gap: 15px;
+  margin-top: 22px;
+  padding-top: 21px;
+  border-top: 1px solid rgba(129, 201, 246, 0.1);
+}
+
+.date-block {
+  display: flex;
+  width: 61px;
+  height: 61px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid color-mix(in srgb, var(--event-color) 38%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--event-color) 9%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.date-block strong {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 21px;
+}
+
+.date-block span {
+  color: var(--event-color);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+}
+
+.selected-event > div:nth-child(2) > span {
+  color: var(--event-color, var(--cyan));
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.event-arrow {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  border: 1px solid rgba(128, 207, 255, 0.15);
+  border-radius: 10px;
+  color: var(--cyan);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.selected-event h4 {
+  margin: 4px 0;
+  font-size: 15px;
+}
+
+.selected-event p {
+  margin: 0;
+  color: #7189a7;
+  font-size: 10px;
+}
+
+.event-list {
+  padding: 22px;
+}
+
+.event-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px 18px;
+  border-bottom: 1px solid rgba(129, 201, 246, 0.1);
+}
+
+.event-list-header span:last-child {
+  color: var(--cyan);
+}
+
+.event-row {
+  display: grid;
+  width: 100%;
+  min-height: 84px;
+  grid-template-columns: 28px 53px 1fr 24px;
+  align-items: center;
+  gap: 13px;
+  padding: 10px 4px;
+  border-bottom: 1px solid rgba(129, 201, 246, 0.08);
+  background: transparent;
+  text-align: left;
+  transition: background 180ms ease, padding 180ms ease;
+}
+
+.event-row:hover {
+  padding-inline: 10px;
+  border-radius: 12px;
+  background: rgba(52, 126, 255, 0.07);
+}
+
+.event-count {
+  color: #4f6785;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+}
+
+.event-date {
+  display: flex;
+  height: 51px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid color-mix(in srgb, var(--event-color) 25%, transparent);
+  border-radius: 11px;
+  color: var(--event-color);
+  background: color-mix(in srgb, var(--event-color) 7%, transparent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+}
+
+.event-date strong {
+  color: #fff;
+  font-size: 16px;
+}
+
+.event-info {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.event-info small {
+  color: var(--event-color, var(--cyan));
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 6px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.event-info strong {
+  overflow: hidden;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event-info em {
+  overflow: hidden;
+  color: #657e9b;
+  font-size: 9px;
+  font-style: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event-row > i {
+  color: #7893b3;
+  font-style: normal;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.event-row:hover > i {
+  color: var(--cyan);
+  transform: translate(2px, -2px);
+}

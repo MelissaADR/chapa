@@ -1,0 +1,125 @@
+/* TIMES DA ESCOLA — Grade, cartões, cores, escudos, informações, desempenho e botão de cada time. */
+.school-team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.school-team-card {
+  --team-color: var(--cyan);
+  display: grid;
+  min-height: 155px;
+  grid-template-columns: 78px 1fr auto;
+  align-items: center;
+  gap: 22px;
+  overflow: hidden;
+  padding: 24px;
+  border-radius: 22px;
+}
+
+.school-team-card::after {
+  position: absolute;
+  top: -70px;
+  left: -50px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid color-mix(in srgb, var(--team-color) 18%, transparent);
+  border-radius: 50%;
+  content: "";
+  box-shadow: 0 0 0 34px color-mix(in srgb, var(--team-color) 2%, transparent);
+}
+
+.school-team-card:hover {
+  border-color: color-mix(in srgb, var(--team-color) 36%, transparent);
+}
+
+.team-cyan { --team-color: #61ecff; }
+.team-blue { --team-color: #4d78ff; }
+.team-violet { --team-color: #447cff; }
+.team-electric { --team-color: #18a8ff; }
+.team-cobalt { --team-color: #075dff; }
+
+.school-team-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.team-crest {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 72px;
+  height: 72px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--team-color) 45%, transparent);
+  border-radius: 20px;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--team-color) 30%, transparent), rgba(4, 24, 61, 0.6));
+  box-shadow: 0 0 26px color-mix(in srgb, var(--team-color) 12%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.team-crest span {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 14px;
+  font-weight: 730;
+}
+
+.team-crest i {
+  position: absolute;
+  width: 43px;
+  height: 18px;
+  border: 1px solid color-mix(in srgb, var(--team-color) 65%, transparent);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}
+
+.team-copy {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+.team-copy > span {
+  color: var(--team-color);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.team-copy h3 {
+  margin: 7px 0 6px;
+  font-size: 20px;
+  letter-spacing: -0.04em;
+}
+
+.team-copy p {
+  margin-bottom: 0;
+  color: #758eaa;
+  font-size: 10px;
+}
+
+.team-record {
+  position: absolute;
+  right: 23px;
+  bottom: 21px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #758eaa;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+  text-transform: uppercase;
+}
+
+.team-record i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 7px var(--mint);
+}
+
+.school-team-card > button {
+  position: relative;
+  z-index: 2;
+  align-self: start;
+}

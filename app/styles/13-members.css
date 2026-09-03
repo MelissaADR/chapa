@@ -1,0 +1,125 @@
+/* INTEGRANTES DA CHAPA — Aviso demonstrativo, grade de membros, cartões, avatares, cargos e situação. */
+.team-section > .section-heading {
+  margin-bottom: 18px;
+}
+
+.demo-note {
+  display: inline-flex;
+  margin-bottom: 34px;
+  padding: 8px 11px;
+  border: 1px solid rgba(120, 211, 255, 0.13);
+  border-radius: 999px;
+  color: #7893b1;
+  background: rgba(39, 112, 255, 0.05);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.member-card {
+  position: relative;
+  min-height: 285px;
+  overflow: hidden;
+  padding: 22px;
+  border-radius: 21px;
+  text-align: center;
+  transition: translate 200ms ease, border-color 200ms ease, background 200ms ease;
+}
+
+.member-card::before {
+  position: absolute;
+  top: -95px;
+  left: 50%;
+  width: 230px;
+  height: 230px;
+  border: 1px solid rgba(100, 216, 255, 0.1);
+  border-radius: 50%;
+  content: "";
+  box-shadow: 0 0 0 36px rgba(52, 133, 255, 0.018);
+  transform: translateX(-50%);
+}
+
+.member-card:hover {
+  translate: 0 -5px;
+  border-color: rgba(97, 220, 255, 0.3);
+  background: linear-gradient(145deg, rgba(13, 48, 95, 0.78), rgba(4, 19, 45, 0.72));
+}
+
+.member-code {
+  position: relative;
+  z-index: 2;
+  display: block;
+  color: #57718f;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  text-align: left;
+}
+
+.member-avatar {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 82px;
+  height: 82px;
+  margin: 24px auto 19px;
+  place-items: center;
+  border: 1px solid rgba(110, 224, 255, 0.28);
+  border-radius: 26px;
+  background: linear-gradient(145deg, #225ed8, #08235e);
+  box-shadow: 0 15px 36px rgba(13, 73, 192, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.member-avatar i {
+  position: absolute;
+  width: 58px;
+  height: 26px;
+  border: 1px solid rgba(121, 235, 255, 0.56);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}
+
+.member-card h3 {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 6px;
+  font-size: 17px;
+  letter-spacing: -0.035em;
+}
+
+.member-card > p {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 18px;
+  color: #7790ad;
+  font-size: 10px;
+}
+
+.member-status {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6984a2;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+}
+
+.member-status i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 7px var(--mint);
+}

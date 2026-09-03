@@ -1,0 +1,717 @@
+/* RESPONSIVIDADE — Ajustes para mouse ou toque, tablet, celular, telas pequenas e preferência por menos movimento. */
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  .tilt-card {
+    cursor: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+
+  .particle-field span:nth-child(n + 9) {
+    display: none;
+  }
+
+  .tilt-card {
+    transform: none !important;
+  }
+
+  .tilt-card:hover {
+    translate: 0;
+  }
+
+  .hero-system,
+  .manifesto-card,
+  .proposal-card,
+  .idea-form,
+  .calendar-panel,
+  .event-list,
+  .ranking-panel,
+  .spotlight-card,
+  .school-team-card,
+  .member-card {
+    backdrop-filter: blur(10px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .main-nav a {
+    padding-inline: 8px;
+    font-size: 11px;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(350px, 0.82fr);
+    gap: 35px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 6vw, 5.2rem);
+  }
+
+  .hero-system {
+    min-height: 520px;
+  }
+
+  .radar-stage {
+    min-height: 425px;
+    scale: 0.92;
+  }
+
+  .voice-layout {
+    gap: 35px;
+  }
+
+  .game-types {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .game-intro {
+    grid-column: 1 / -1;
+    padding-bottom: 20px;
+  }
+
+  .game-intro h3 {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 900px) {
+  .page-shell {
+    width: min(100% - 34px, 720px);
+  }
+
+  .section {
+    padding-block: 100px;
+  }
+
+  .site-header {
+    top: 12px;
+    width: calc(100% - 24px);
+  }
+
+  .main-nav {
+    position: absolute;
+    top: calc(100% + 9px);
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px;
+    border: 1px solid rgba(152, 215, 255, 0.15);
+    border-radius: 16px;
+    background: rgba(3, 13, 33, 0.96);
+    box-shadow: 0 24px 55px rgba(0, 4, 22, 0.48);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateY(-8px) scale(0.98);
+    transform-origin: top;
+    backdrop-filter: blur(22px);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  }
+
+  .main-nav.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+
+  .main-nav a {
+    min-height: 44px;
+    padding: 13px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .main-nav a:hover,
+  .main-nav a.is-active {
+    background: rgba(39, 112, 255, 0.1);
+  }
+
+  .main-nav a::after {
+    display: none;
+  }
+
+  .header-cta {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
+  .menu-toggle {
+    position: relative;
+    display: grid;
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding-top: 150px;
+    padding-bottom: 100px;
+  }
+
+  .hero::before {
+    display: none;
+  }
+
+  .hero-copy {
+    max-width: 680px;
+  }
+
+  .hero h1 {
+    max-width: 700px;
+    font-size: clamp(3.6rem, 11vw, 6rem);
+  }
+
+  .hero-system {
+    min-height: 550px;
+  }
+
+  .radar-stage {
+    min-height: 455px;
+    scale: 1;
+  }
+
+  .scroll-cue {
+    display: none;
+  }
+
+  .manifesto-grid,
+  .voice-layout,
+  .calendar-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .idea-form {
+    position: relative;
+    top: auto;
+  }
+
+  .proposal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sports-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prize-banner {
+    grid-template-columns: 78px 1fr;
+  }
+
+  .prize-banner .button {
+    grid-column: 2;
+    width: fit-content;
+  }
+
+  .media-card,
+  .media-featured,
+  .media-featured + .media-card {
+    grid-column: span 6;
+  }
+
+  .media-featured .media-art {
+    height: 270px;
+  }
+
+  .ranking-panel {
+    grid-column: span 12;
+  }
+
+  .spotlight-card {
+    grid-column: span 5;
+  }
+
+  .summary-strip {
+    grid-column: span 7;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-strip div:nth-child(3) {
+    border-left: 0;
+  }
+
+  .summary-strip div:nth-child(n + 3) {
+    padding-top: 16px;
+  }
+
+  .school-team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .member-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .final-orb {
+    right: -150px;
+    opacity: 0.55;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr auto auto;
+  }
+
+  .footer-links {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .back-top {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+}
+
+@media (max-width: 680px) {
+  .page-shell {
+    width: min(100% - 24px, 560px);
+  }
+
+  .section {
+    padding-block: 82px;
+  }
+
+  .site-header {
+    min-height: 62px;
+    padding: 7px 8px 7px 12px;
+    border-radius: 15px;
+  }
+
+  .pixel-wordmark {
+    font-size: 14px;
+  }
+
+  .pixel-lockup small {
+    font-size: 7px;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 128px;
+    padding-bottom: 82px;
+  }
+
+  .signal-pill {
+    margin-bottom: 22px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 15vw, 5rem);
+  }
+
+  .hero-lead {
+    font-size: 15px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-stats div {
+    min-width: 0;
+    padding: 0 12px;
+  }
+
+  .hero-stats span {
+    font-size: 8px;
+  }
+
+  .hero-system {
+    min-height: 440px;
+    border-radius: 24px;
+  }
+
+  .radar-stage {
+    min-height: 350px;
+    scale: 0.74;
+  }
+
+  .system-footer span:first-child {
+    display: none;
+  }
+
+  .marquee {
+    padding-block: 13px;
+  }
+
+  .split-heading,
+  .media-top,
+  .participation-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 23px;
+    margin-bottom: 42px;
+  }
+
+  .section-heading h2,
+  .arena-heading h2,
+  .final-cta h2 {
+    font-size: clamp(2.35rem, 12vw, 3.8rem);
+  }
+
+  .section-heading > p {
+    font-size: 14px;
+  }
+
+  .manifesto-card {
+    min-height: 330px;
+    padding: 25px;
+  }
+
+  .manifesto-card p {
+    font-size: 1.7rem;
+  }
+
+  .values-grid,
+  .proposal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-card {
+    min-height: 150px;
+  }
+
+  .proposal-card {
+    min-height: 285px;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-bottom {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .form-bottom .button {
+    width: 100%;
+  }
+
+  .calendar-panel,
+  .event-list {
+    padding: 18px;
+    border-radius: 21px;
+  }
+
+  .calendar-controls {
+    display: none;
+  }
+
+  .calendar-day,
+  .empty-day {
+    min-height: 42px;
+  }
+
+  .selected-event {
+    grid-template-columns: 53px 1fr 36px;
+    gap: 11px;
+  }
+
+  .date-block {
+    width: 53px;
+    height: 53px;
+  }
+
+  .event-list-header span:last-child {
+    display: none;
+  }
+
+  .event-row {
+    grid-template-columns: 48px 1fr 20px;
+  }
+
+  .event-count {
+    display: none;
+  }
+
+  .event-date {
+    width: 48px;
+  }
+
+  .sports-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sport-card {
+    min-height: 235px;
+  }
+
+  .prize-banner {
+    grid-template-columns: 1fr;
+    margin-bottom: 56px;
+    padding: 24px;
+  }
+
+  .prize-banner .button {
+    grid-column: 1;
+    width: 100%;
+  }
+
+  .prize-symbol {
+    width: 66px;
+    height: 66px;
+  }
+
+  .game-types {
+    grid-template-columns: 1fr;
+  }
+
+  .game-intro {
+    grid-column: auto;
+  }
+
+  .game-card {
+    min-height: 190px;
+  }
+
+  .filter-pills {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .filter-pills button {
+    flex: 1 0 auto;
+  }
+
+  .media-grid {
+    display: flex;
+    width: calc(100% + 12px);
+    gap: 13px;
+    overflow-x: auto;
+    padding: 0 12px 18px 0;
+    scroll-snap-type: x mandatory;
+  }
+
+  .media-card,
+  .media-featured,
+  .media-featured + .media-card {
+    width: min(86vw, 390px);
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .media-art,
+  .media-featured .media-art {
+    height: 250px;
+  }
+
+  .panel-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ranking-toggle {
+    width: 100%;
+  }
+
+  .ranking-toggle button {
+    flex: 1;
+  }
+
+  .ranking-panel {
+    padding: 20px;
+  }
+
+  .ranking-row {
+    grid-template-columns: 22px 58px 1fr 42px;
+    gap: 8px;
+  }
+
+  .ranking-row small {
+    display: none;
+  }
+
+  .spotlight-card,
+  .summary-strip {
+    grid-column: span 12;
+  }
+
+  .summary-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-strip div {
+    min-height: 83px;
+  }
+
+  .summary-strip div:nth-child(3) {
+    border-left: 0;
+  }
+
+  .school-team-card {
+    min-height: 180px;
+    grid-template-columns: 66px 1fr 38px;
+    gap: 14px;
+    padding: 19px;
+  }
+
+  .team-crest {
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+  }
+
+  .team-record {
+    right: 18px;
+    bottom: 17px;
+  }
+
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .member-card {
+    min-height: 260px;
+  }
+
+  .final-cta {
+    width: calc(100% - 24px);
+    min-height: 570px;
+    padding: 56px 28px 230px;
+    border-radius: 28px;
+  }
+
+  .final-orb {
+    right: 50%;
+    bottom: -230px;
+    width: 370px;
+    height: 370px;
+    opacity: 0.68;
+    transform: translateX(50%);
+  }
+
+  .final-actions .button {
+    width: 100%;
+  }
+
+  .site-footer {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+
+  .back-top {
+    position: absolute;
+    right: 0;
+    bottom: 34px;
+  }
+
+  .media-modal {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-art {
+    min-height: 270px;
+  }
+
+  .modal-copy {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 420px) {
+  .pixel-lockup small {
+    display: none;
+  }
+
+  .pixel-wordmark {
+    font-size: 13px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero-stats strong {
+    font-size: 17px;
+  }
+
+  .hero-stats span {
+    font-size: 7px;
+  }
+
+  .radar-stage {
+    margin-inline: -52px;
+  }
+
+  .calendar-day,
+  .empty-day {
+    min-height: 37px;
+  }
+
+  .calendar-grid,
+  .weekdays {
+    gap: 2px;
+  }
+
+  .school-team-card {
+    grid-template-columns: 58px 1fr;
+  }
+
+  .school-team-card > button {
+    display: none;
+  }
+
+  .team-crest {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .cursor-dot,
+  .cursor-ring,
+  .particle-field,
+  .scroll-cue {
+    display: none !important;
+  }
+
+  [data-reveal],
+  .hero-enter {
+    opacity: 1 !important;
+    translate: 0 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

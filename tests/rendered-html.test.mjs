@@ -38,18 +38,46 @@ test("server-renders the Chapa Azul experience", async () => {
 });
 
 test("keeps the finished site metadata", async () => {
-  const [page, layout, packageJson] = await Promise.all([
+  const [page, layout, packageJson, hero, events, participation] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
+    readFile(new URL("../app/components/HeroSection.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/components/EventsSection.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/components/ParticipationSection.tsx", import.meta.url), "utf8"),
   ]);
 
-  assert.match(page, /CHAPA AZUL/);
-  assert.match(page, /id="eventos"/);
-  assert.match(page, /id="participacao"/);
+  assert.match(hero, /CHAPA AZUL/);
+  assert.match(events, /id="eventos"/);
+  assert.match(participation, /id="participacao"/);
   assert.match(layout, /lang="pt-BR"/);
   assert.match(layout, /const title = "Chapa Azul \| A escola em movimento"/);
   assert.doesNotMatch(page, /SkeletonPreview/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   await assert.rejects(access(new URL("../app/_sites-preview/", import.meta.url)));
+});
+
+test("keeps every interactive area connected", async () => {
+  const [page, interactions, header, voice, events, media, participation, modal] =
+    await Promise.all([
+      readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+      readFile(new URL("../app/site-interactions.ts", import.meta.url), "utf8"),
+      readFile(new URL("../app/components/SiteHeader.tsx", import.meta.url), "utf8"),
+      readFile(new URL("../app/components/VoiceSection.tsx", import.meta.url), "utf8"),
+      readFile(new URL("../app/components/EventsSection.tsx", import.meta.url), "utf8"),
+      readFile(new URL("../app/components/MediaSection.tsx", import.meta.url), "utf8"),
+      readFile(new URL("../app/components/ParticipationSection.tsx", import.meta.url), "utf8"),
+      readFile(new URL("../app/components/MediaModal.tsx", import.meta.url), "utf8"),
+    ]);
+
+  assert.match(page, /useSiteChrome\(\)/);
+  assert.match(header, /onMenuOpenChange/);
+  assert.match(voice, /onSubmit=\{onSuggestionSubmit\}/);
+  assert.match(events, /changeCalendarMonth/);
+  assert.match(media, /onMediaFilterChange/);
+  assert.match(participation, /onRankingViewChange/);
+  assert.match(modal, /role="dialog"/);
+  assert.match(interactions, /IntersectionObserver/);
+  assert.match(interactions, /event\.key === "Escape"/);
+  assert.match(interactions, /--tilt-y/);
 });
