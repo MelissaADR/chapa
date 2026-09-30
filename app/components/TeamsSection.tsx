@@ -13,10 +13,10 @@ export function TeamsSection({ scrollTo, onTilt, onTiltEnd }: TeamsSectionProps)
     <section className="section page-shell teams-section" id="times">
       <div className="split-heading">
         <SectionTitle
-          eyebrow="07 · TIMES DA ESCOLA"
-          title="Quem veste a camisa faz parte da história."
+          eyebrow="07 · TURMAS DA ESCOLA"
+          title="Cada turma faz parte do movimento."
         />
-        <p data-reveal>Conheça as equipes, acompanhe resultados e encontre seu lugar no próximo jogo.</p>
+        <p data-reveal>Dez turmas, muitas ideias e um só movimento. Encontre a sua e participe das atividades da escola.</p>
       </div>
       <div className="school-team-grid">
         {schoolTeams.map((team, index) => (
@@ -28,7 +28,7 @@ export function TeamsSection({ scrollTo, onTilt, onTiltEnd }: TeamsSectionProps)
               <p>{team.captain}</p>
             </div>
             <div className="team-record"><i /> {team.record}</div>
-            <button type="button" onClick={() => scrollTo("voz")} aria-label={`Quero participar do time ${team.name}`}>↗</button>
+            <button type="button" onClick={() => scrollTo("voz")} aria-label={`Enviar uma ideia pela turma ${team.name}`}>↗</button>
           </article>
         ))}
       </div>

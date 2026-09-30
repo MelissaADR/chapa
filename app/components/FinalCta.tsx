@@ -1,12 +1,12 @@
 // CHAMADA FINAL: controla o convite exibido antes do rodapé e seus botões de navegação.
 import type { ScrollToSection } from "./component-types";
-import { PixelWordmark } from "./shared";
 
 export function FinalCta({ scrollTo }: { scrollTo: ScrollToSection }) {
   return (
     <section className="final-cta page-shell" data-reveal>
       <div className="final-grid" aria-hidden="true" />
-      <div className="final-orb" aria-hidden="true"><PixelWordmark /></div>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img className="final-gumball" src="/images/gumball-terno.png" alt="Gumball de terno e gravata-borboleta" width={500} height={500} loading="lazy" />
       <span className="eyebrow"><span className="eyebrow-dot" /> O PRÓXIMO PASSO É SEU</span>
       <h2>A próxima mudança pode começar com a <span>sua ideia.</span></h2>
       <p>Vem construir uma escola mais ativa, conectada e azul com a gente.</p>

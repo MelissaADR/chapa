@@ -1,6 +1,6 @@
 // SEÇÃO VOZ DOS ALUNOS: controla os comentários e o formulário para enviar novas sugestões.
 import type { FormEvent } from "react";
-import type { Comment } from "../site-data";
+import { schoolClasses, type Comment } from "../site-data";
 import type { TiltProps } from "./component-types";
 import { SectionTitle } from "./shared";
 
@@ -55,7 +55,12 @@ export function VoiceSection({
             </label>
             <label>
               <span>Turma</span>
-              <input name="className" type="text" placeholder="Ex.: 2º B" maxLength={12} required />
+              <select name="className" defaultValue="" required>
+                <option value="" disabled>Selecione</option>
+                {schoolClasses.map((className) => (
+                  <option value={className} key={className}>{className}</option>
+                ))}
+              </select>
             </label>
           </div>
           <label>

@@ -1,4 +1,4 @@
-/* PARTICIPAÇÃO E RANKING — Painel de classificação, alternador, barras, destaque do aluno e resumo numérico. */
+/* PARTICIPAÇÃO E RANKING — Painel de classificação, alternador e barras. */
 .participation-section {
   width: 100%;
   background: rgba(2, 11, 29, 0.56);
@@ -39,7 +39,8 @@
 }
 
 .ranking-panel {
-  grid-column: span 8;
+  grid-column: 1 / -1;
+  min-width: 0;
   padding: 27px;
   border-radius: 24px;
 }
@@ -70,7 +71,7 @@
 .ranking-row {
   display: grid;
   min-height: 58px;
-  grid-template-columns: 28px 68px 1fr 49px 42px;
+  grid-template-columns: 28px 96px minmax(0, 1fr) 49px 42px;
   align-items: center;
   gap: 12px;
   border-top: 1px solid rgba(132, 205, 248, 0.08);
@@ -84,6 +85,7 @@
 
 .ranking-row > strong {
   font-size: 12px;
+  white-space: nowrap;
 }
 
 .rank-track {
@@ -121,152 +123,9 @@
   text-align: right;
 }
 
-.spotlight-card {
-  grid-column: span 4;
-  overflow: hidden;
-  padding: 27px;
-  border-radius: 24px;
-  text-align: center;
-}
-
-.spotlight-card::after {
-  position: absolute;
-  top: -150px;
-  left: 50%;
-  width: 320px;
-  height: 320px;
-  border: 1px solid rgba(85, 213, 255, 0.13);
-  border-radius: 50%;
-  content: "";
-  box-shadow: 0 0 0 45px rgba(58, 138, 255, 0.02), 0 0 0 90px rgba(58, 138, 255, 0.014);
-  transform: translateX(-50%);
-}
-
-.spotlight-card > * {
-  position: relative;
-  z-index: 2;
-}
-
-.spotlight-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: left;
-}
-
-.spotlight-top i {
-  color: var(--cyan);
-  font-size: 14px;
-  font-style: normal;
-  text-shadow: 0 0 14px var(--electric);
-}
-
-.spotlight-avatar {
-  position: relative;
-  display: grid;
-  width: 90px;
-  height: 90px;
-  margin: 30px auto 17px;
-  place-items: center;
-  border: 1px solid rgba(109, 225, 255, 0.36);
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 25%, #377fff, #08245e 69%);
-  box-shadow: 0 0 34px rgba(39, 177, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 18px;
-  font-weight: 730;
-}
-
-.spotlight-avatar i {
-  position: absolute;
-  right: 3px;
-  bottom: 8px;
-  width: 12px;
-  height: 12px;
-  border: 3px solid #07162f;
-  border-radius: 50%;
-  background: var(--mint);
-  box-shadow: 0 0 9px var(--mint);
-}
-
-.spotlight-card h3 {
-  margin-bottom: 5px;
-  font-size: 23px;
-  letter-spacing: -0.04em;
-}
-
-.spotlight-card > p {
-  margin-bottom: 23px;
-  color: #8299b4;
-  font-size: 11px;
-}
-
-.spotlight-card > p strong {
-  color: #dcedff;
-}
-
-.spotlight-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 17px;
-  padding: 16px 0;
-  border-top: 1px solid rgba(132, 205, 248, 0.1);
-  border-bottom: 1px solid rgba(132, 205, 248, 0.1);
-}
-
-.spotlight-stats div {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.spotlight-stats div + div {
-  border-left: 1px solid rgba(132, 205, 248, 0.1);
-}
-
-.spotlight-stats strong {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 16px;
-}
-
-.spotlight-stats span,
-.spotlight-note {
-  color: #66809e;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 7px;
-  text-transform: uppercase;
-}
-
-.summary-strip {
-  display: grid;
-  grid-column: span 12;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 23px 0;
-  border: 1px solid rgba(128, 207, 255, 0.12);
-  border-radius: 20px;
-  background: rgba(6, 26, 56, 0.53);
-}
-
-.summary-strip div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-  border-left: 1px solid rgba(128, 207, 255, 0.1);
-}
-
-.summary-strip div:first-child {
-  border-left: 0;
-}
-
-.summary-strip strong {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 24px;
-  letter-spacing: -0.05em;
-}
-
-.summary-strip span {
-  color: #6d86a5;
-  font-size: 9px;
+@media (max-width: 680px) {
+  .ranking-panel .ranking-row {
+    grid-template-columns: 22px 84px minmax(0, 1fr) 42px;
+    gap: 8px;
+  }
 }

@@ -1,4 +1,4 @@
-/* CENTRO DE MÍDIA — Filtros, grade e cartões de mídia, artes ilustradas em CSS, botão de reprodução e textos. */
+/* CENTRO DE MÍDIA — Filtros, grade e cartões de mídia, imagens ilustrativas, botão de reprodução e textos. */
 .media-top {
   align-items: flex-end;
 }
@@ -76,154 +76,25 @@
   height: 360px;
 }
 
-.media-art::before,
+.media-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+
+.media-card:hover .media-image {
+  transform: scale(1.035);
+}
+
 .media-art::after {
   position: absolute;
-  content: "";
-  transition: transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-
-.media-card:hover .media-art::before {
-  transform: translate(-50%, -50%) rotate(24deg) scale(1.08);
-}
-
-.media-card:hover .media-art::after {
-  transform: rotate(-14deg) scale(1.09);
-}
-
-.art-court {
-  background:
-    linear-gradient(135deg, rgba(38, 113, 255, 0.92), rgba(4, 34, 108, 0.95)),
-    #0d46be;
-}
-
-.art-court::before {
-  top: 50%;
-  left: 50%;
-  width: 260px;
-  height: 260px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 50%;
-  box-shadow: 0 0 0 52px rgba(255, 255, 255, 0.035), 0 0 0 104px rgba(255, 255, 255, 0.025);
-  transform: translate(-50%, -50%) rotate(16deg);
-}
-
-.art-court::after {
-  right: -7%;
-  bottom: -34%;
-  width: 70%;
-  height: 110%;
-  border: 1px solid rgba(111, 232, 255, 0.46);
-  border-radius: 50%;
-  box-shadow: 0 0 50px rgba(39, 216, 255, 0.14);
-  transform: rotate(-20deg);
-}
-
-.art-volley {
-  background: linear-gradient(145deg, #063f9c, #091843 64%, #173fd4);
-}
-
-.art-volley::before {
-  top: 48%;
-  left: 50%;
-  width: 170px;
-  height: 170px;
-  border: 2px solid rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  background:
-    conic-gradient(from 45deg, transparent 0 18%, rgba(99, 229, 255, 0.28) 18% 34%, transparent 34% 51%, rgba(255, 255, 255, 0.16) 51% 69%, transparent 69%);
-  box-shadow: 0 0 55px rgba(47, 173, 255, 0.34), inset 0 0 30px rgba(39, 216, 255, 0.16);
-  transform: translate(-50%, -50%) rotate(16deg);
-}
-
-.art-volley::after {
-  top: -10%;
-  right: -8%;
-  width: 190px;
-  height: 190px;
-  border: 1px solid rgba(114, 225, 255, 0.24);
-  border-radius: 50%;
-  box-shadow: 0 0 0 38px rgba(38, 130, 255, 0.045), 0 0 0 76px rgba(38, 130, 255, 0.025);
-}
-
-.art-creative {
-  background: linear-gradient(135deg, #3124a3, #0b3f9f 45%, #0791c4);
-}
-
-.art-creative::before {
-  top: 52%;
-  left: 52%;
-  width: 230px;
-  height: 140px;
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  border-radius: 28% 72% 63% 37% / 35% 38% 62% 65%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(83, 229, 255, 0.04));
-  box-shadow: 0 0 45px rgba(77, 226, 255, 0.18);
-  transform: translate(-50%, -50%) rotate(16deg);
-}
-
-.art-creative::after {
-  right: 4%;
-  bottom: -20%;
-  width: 150px;
-  height: 240px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transform: rotate(-35deg);
-}
-
-.art-digital {
-  background:
-    repeating-linear-gradient(90deg, transparent 0 39px, rgba(121, 226, 255, 0.09) 40px),
-    repeating-linear-gradient(0deg, transparent 0 39px, rgba(121, 226, 255, 0.07) 40px),
-    linear-gradient(145deg, #06183e, #0c3da2 58%, #087eb2);
-}
-
-.art-digital::before {
-  top: 50%;
-  left: 50%;
-  width: 160px;
-  height: 160px;
-  border: 1px solid rgba(129, 238, 255, 0.5);
-  border-radius: 24px;
-  background: linear-gradient(145deg, rgba(65, 176, 255, 0.2), rgba(4, 22, 67, 0.1));
-  box-shadow: 0 0 45px rgba(39, 216, 255, 0.2), inset 0 0 35px rgba(67, 168, 255, 0.14);
-  transform: translate(-50%, -50%) rotate(16deg);
-}
-
-.art-digital::after {
-  top: 15%;
-  left: 13%;
-  width: 65%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-  box-shadow: 0 80px 0 rgba(120, 244, 255, 0.45), 0 160px 0 rgba(120, 244, 255, 0.25);
-  transform: rotate(-8deg);
-}
-
-.art-grid {
-  position: absolute;
   inset: 0;
-  opacity: 0.35;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
-  background-size: 30px 30px;
-  mask-image: linear-gradient(black, transparent 90%);
+  content: "";
+  background: linear-gradient(transparent 55%, rgba(0, 10, 35, 0.65));
+  pointer-events: none;
 }
-
-.art-orbit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  height: 46%;
-  border: 1px solid rgba(118, 233, 255, 0.2);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) rotate(-12deg);
-  animation: art-orbit 8s ease-in-out infinite alternate;
-}
-
 .media-category,
 .media-art-code,
 .media-play {

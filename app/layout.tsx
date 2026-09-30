@@ -48,11 +48,18 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       locale: "pt_BR",
       url: origin,
+      images: [{
+        url: `${origin}/og.png`,
+        width: 1730,
+        height: 909,
+        alt: "Chapa Azul. A escola em movimento. A voz é de todo mundo.",
+      }],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
       description,
+      images: [`${origin}/og.png`],
     },
   };
 }

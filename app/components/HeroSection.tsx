@@ -1,11 +1,13 @@
-// TELA INICIAL: controla o destaque principal, seus botões, números, arte animada e faixa de movimento.
-import type { ScrollToSection, TiltProps } from "./component-types";
+// TELA INICIAL: destaque principal, botões, números, logo com Gumball e faixa de movimento.
+import { proposals, schoolClasses } from "../site-data";
+import type { ScrollToSection } from "./component-types";
+import { PixelWordmark } from "./shared";
 
-type HeroSectionProps = TiltProps & {
+type HeroSectionProps = {
   scrollTo: ScrollToSection;
 };
 
-export function HeroSection({ scrollTo, onTilt, onTiltEnd }: HeroSectionProps) {
+export function HeroSection({ scrollTo }: HeroSectionProps) {
   return (
     <section className="hero page-shell" id="inicio">
       <div className="hero-copy">
@@ -33,12 +35,12 @@ export function HeroSection({ scrollTo, onTilt, onTiltEnd }: HeroSectionProps) {
         </div>
         <div className="hero-stats hero-enter hero-delay-5">
           <div>
-            <strong>12</strong>
-            <span>propostas abertas</span>
+            <strong>{String(proposals.length).padStart(2, "0")}</strong>
+            <span>propostas</span>
           </div>
           <div>
-            <strong>08</strong>
-            <span>eventos planejados</span>
+            <strong>{schoolClasses.length}</strong>
+            <span>turmas unidas</span>
           </div>
           <div>
             <strong>100%</strong>
@@ -47,45 +49,19 @@ export function HeroSection({ scrollTo, onTilt, onTiltEnd }: HeroSectionProps) {
         </div>
       </div>
 
-      <div
-        className="hero-system tilt-card hero-enter hero-delay-3"
-        onPointerMove={onTilt}
-        onPointerLeave={onTiltEnd}
-      >
-        <div className="system-topline">
-          <span>AZUL.OS / MOVIMENTO</span>
-          <span className="system-live"><i /> AO VIVO</span>
-        </div>
-        <div className="radar-stage">
-          <div className="radar-ring ring-one" />
-          <div className="radar-ring ring-two" />
-          <div className="radar-ring ring-three" />
-          <div className="radar-scan" />
-          <div className="radar-axis axis-x" />
-          <div className="radar-axis axis-y" />
-          <div className="radar-core">
-            <span>CHAPA</span>
-            <strong>AZUL</strong>
-            <small>01</small>
-          </div>
-          <span className="radar-node node-one" />
-          <span className="radar-node node-two" />
-          <span className="radar-node node-three" />
-          <div className="floating-data data-one">
-            <span>PRÓXIMO EVENTO</span>
-            <strong>12 SET</strong>
-          </div>
-          <div className="floating-data data-two">
-            <span>PARTICIPAÇÃO</span>
-            <strong>+24%</strong>
-          </div>
-        </div>
-        <div className="system-footer">
-          <span>ENERGIA COLETIVA</span>
-          <div className="signal-bars">
-            <i /><i /><i /><i /><i />
-          </div>
-          <span>STATUS · ATIVO</span>
+      <div className="hero-brand hero-enter hero-delay-3">
+        {/* A imagem original aponta para a marca à direita. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="hero-gumball"
+          src="/images/gumball-apontando.png"
+          alt="Gumball apontando para a logo da Chapa Azul"
+          width={454}
+          height={521}
+          fetchPriority="high"
+        />
+        <div className="hero-logo">
+          <PixelWordmark subtitle="Grêmio estudantil" />
         </div>
       </div>
 

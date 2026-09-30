@@ -26,7 +26,7 @@ Esse arquivo possui blocos identificados em português para:
 - integrantes da chapa.
 
 Mude apenas os textos e valores que ficam entre aspas ou depois dos nomes dos
-campos. Não troque nomes como `title`, `accent`, `art` ou `color`, pois o código
+campos. Não troque nomes como `title`, `accent`, `image` ou `color`, pois o código
 usa esses nomes para montar o site.
 
 ## Estrutura visível da página
@@ -37,7 +37,7 @@ Cada parte do site possui seu próprio arquivo em `app/components/`:
 | --- | --- |
 | Fundo, partículas e cursor | `AmbientBackground.tsx` |
 | Cabeçalho e menu | `SiteHeader.tsx` |
-| Primeira tela e radar | `HeroSection.tsx` |
+| Primeira tela, logo e Gumball | `HeroSection.tsx` |
 | Faixa animada | `HeroSection.tsx` (`MovementMarquee`) |
 | Sobre a chapa | `AboutSection.tsx` |
 | Propostas | `ProposalsSection.tsx` |
@@ -65,7 +65,7 @@ Os estilos estão em `app/styles/`:
 | Cores gerais, largura e distância entre seções | `00-base.css` |
 | Fundo, auroras, partículas e cursor | `01-ambient.css` |
 | Cabeçalho, menu, logotipo e botões | `02-header.css` |
-| Primeira tela, título, radar e estatísticas | `03-hero.css` |
+| Primeira tela, título, logo, Gumball e estatísticas | `03-hero.css` |
 | Títulos repetidos e faixa animada | `04-shared.css` |
 | Sobre, manifesto e valores | `05-about.css` |
 | Cards das propostas | `06-proposals.css` |

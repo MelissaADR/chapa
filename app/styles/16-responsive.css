@@ -4,6 +4,7 @@
   a,
   button,
   input,
+  select,
   textarea,
   .tilt-card {
     cursor: none;
@@ -28,14 +29,12 @@
     translate: 0;
   }
 
-  .hero-system,
   .manifesto-card,
   .proposal-card,
   .idea-form,
   .calendar-panel,
   .event-list,
   .ranking-panel,
-  .spotlight-card,
   .school-team-card,
   .member-card {
     backdrop-filter: blur(10px);
@@ -57,13 +56,9 @@
     font-size: clamp(3.2rem, 6vw, 5.2rem);
   }
 
-  .hero-system {
-    min-height: 520px;
-  }
-
-  .radar-stage {
-    min-height: 425px;
-    scale: 0.92;
+  .hero-brand {
+    min-height: 400px;
+    padding-bottom: 55px;
   }
 
   .voice-layout {
@@ -174,13 +169,13 @@
     font-size: clamp(3.6rem, 11vw, 6rem);
   }
 
-  .hero-system {
-    min-height: 550px;
+  .hero-brand {
+    min-height: 340px;
+    padding-bottom: 20px;
   }
 
-  .radar-stage {
-    min-height: 455px;
-    scale: 1;
+  .hero-logo .pixel-wordmark {
+    font-size: clamp(58px, 10.5vw, 80px);
   }
 
   .scroll-cue {
@@ -229,23 +224,6 @@
     grid-column: span 12;
   }
 
-  .spotlight-card {
-    grid-column: span 5;
-  }
-
-  .summary-strip {
-    grid-column: span 7;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .summary-strip div:nth-child(3) {
-    border-left: 0;
-  }
-
-  .summary-strip div:nth-child(n + 3) {
-    padding-top: 16px;
-  }
-
   .school-team-grid {
     grid-template-columns: 1fr;
   }
@@ -254,9 +232,12 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .final-orb {
-    right: -150px;
-    opacity: 0.55;
+  .final-cta {
+    padding: 56px 36px;
+  }
+
+  .final-gumball {
+    width: 34%;
   }
 
   .site-footer {
@@ -337,18 +318,23 @@
     font-size: 8px;
   }
 
-  .hero-system {
-    min-height: 440px;
-    border-radius: 24px;
+  .hero-brand {
+    min-height: 240px;
+    padding-block: 10px;
   }
 
-  .radar-stage {
-    min-height: 350px;
-    scale: 0.74;
+  .hero-logo .pixel-wordmark {
+    gap: 9px;
+    font-size: clamp(38px, 10.5vw, 64px);
   }
 
-  .system-footer span:first-child {
-    display: none;
+  .hero-logo .pixel-lockup {
+    gap: 16px;
+  }
+
+  .hero-logo .pixel-lockup small {
+    font-size: 8px;
+    letter-spacing: 0.08em;
   }
 
   .marquee {
@@ -544,23 +530,6 @@
     display: none;
   }
 
-  .spotlight-card,
-  .summary-strip {
-    grid-column: span 12;
-  }
-
-  .summary-strip {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .summary-strip div {
-    min-height: 83px;
-  }
-
-  .summary-strip div:nth-child(3) {
-    border-left: 0;
-  }
-
   .school-team-card {
     min-height: 180px;
     grid-template-columns: 66px 1fr 38px;
@@ -590,17 +559,19 @@
   .final-cta {
     width: calc(100% - 24px);
     min-height: 570px;
-    padding: 56px 28px 230px;
+    padding: 46px 24px 300px;
     border-radius: 28px;
   }
 
-  .final-orb {
-    right: 50%;
-    bottom: -230px;
-    width: 370px;
-    height: 370px;
-    opacity: 0.68;
-    transform: translateX(50%);
+  .final-gumball {
+    right: calc(50% - 135px);
+    width: 270px;
+  }
+
+  .final-cta h2,
+  .final-cta > p,
+  .final-actions {
+    max-width: 100%;
   }
 
   .final-actions .button {
@@ -633,7 +604,8 @@
   }
 
   .modal-copy {
-    min-height: 350px;
+    min-height: 0;
+    padding: 24px;
   }
 }
 
@@ -656,10 +628,6 @@
 
   .hero-stats span {
     font-size: 7px;
-  }
-
-  .radar-stage {
-    margin-inline: -52px;
   }
 
   .calendar-day,

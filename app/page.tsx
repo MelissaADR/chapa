@@ -108,8 +108,6 @@ export default function Home() {
         {/* INÍCIO: apresentação principal e botões de chamada. */}
         <HeroSection
           scrollTo={scrollTo}
-          onTilt={handleTilt}
-          onTiltEnd={resetTilt}
         />
         {/* FAIXA DE MOVIMENTO: mensagem animada entre o início e o conteúdo. */}
         <MovementMarquee />

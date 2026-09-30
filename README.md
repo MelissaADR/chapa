@@ -41,7 +41,7 @@ misturar conteúdo, aparência e comportamento:
 | `00-base.css` | Cores, fontes, largura e espaçamentos gerais |
 | `01-ambient.css` | Fundo, auroras, partículas, cursor e progresso |
 | `02-header.css` | Cabeçalho, marca, menu e botões básicos |
-| `03-hero.css` | Tela inicial, radar e estatísticas |
+| `03-hero.css` | Tela inicial, logo, Gumball e estatísticas |
 | `04-shared.css` | Faixa animada e títulos compartilhados |
 | `05-about.css` | Sobre, manifesto e valores |
 | `06-proposals.css` | Cards de propostas |
@@ -58,3 +58,8 @@ misturar conteúdo, aparência e comportamento:
 
 Para mudar apenas conteúdo, comece por `app/site-data.ts`. Para mudar cores,
 largura ou espaçamento geral, comece por `app/styles/00-base.css`.
+
+As turmas são definidas uma única vez em `schoolClasses`, em `app/site-data.ts`,
+e aparecem no ranking, nos cards e no formulário. As oito propostas ficam em
+`proposals`. As imagens dos Gumballs estão em `public/images/`; as ilustrações
+da galeria e os prompts usados para gerá-las estão em `public/images/media/`.

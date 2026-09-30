@@ -89,6 +89,7 @@
   margin: 7px 0 6px;
   font-size: 20px;
   letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
 }
 
 .team-copy p {
@@ -122,4 +123,22 @@
   position: relative;
   z-index: 2;
   align-self: start;
+}
+
+@media (max-width: 420px) {
+  .teams-section .school-team-card {
+    grid-template-columns: 55px minmax(0, 1fr) 32px;
+    gap: 10px;
+    padding-inline: 15px;
+  }
+
+  .teams-section .school-team-card > button {
+    display: grid;
+    width: 32px;
+    height: 32px;
+  }
+
+  .teams-section .team-crest span {
+    font-size: 11px;
+  }
 }

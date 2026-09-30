@@ -23,16 +23,16 @@
 
 .proposal-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 
 .proposal-card {
   display: flex;
-  min-height: 320px;
+  min-height: 340px;
   flex-direction: column;
   overflow: hidden;
-  padding: 25px;
+  padding: clamp(25px, 3vw, 36px);
   border-radius: 22px;
 }
 
@@ -59,7 +59,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: auto;
+  margin-bottom: 0;
 }
 
 .proposal-top span {
@@ -90,23 +90,23 @@
 }
 
 .proposal-card h3 {
-  margin: 66px 0 11px;
+  margin: 26px 0 14px;
   font-size: 24px;
   letter-spacing: -0.045em;
 }
 
 .proposal-card p {
-  min-height: 60px;
-  margin-bottom: 23px;
-  color: #93a9c3;
-  font-size: 13px;
-  line-height: 1.6;
+  margin-bottom: 28px;
+  color: #a9bdd4;
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 .proposal-status {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-top: auto;
   padding-top: 17px;
   border-top: 1px solid rgba(132, 205, 248, 0.1);
   color: #7894b3;
@@ -117,9 +117,24 @@
 }
 
 .proposal-status span {
+  flex-shrink: 0;
   width: 5px;
   height: 5px;
   border-radius: 50%;
   background: var(--mint);
   box-shadow: 0 0 8px var(--mint);
+}
+
+@media (max-width: 680px) {
+  .proposals-section .proposal-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .proposals-section .proposal-card {
+    min-height: 0;
+  }
+
+  .proposal-card h3 {
+    font-size: 23px;
+  }
 }

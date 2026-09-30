@@ -13,7 +13,8 @@ export type MediaItem = {
   title: string;
   date: string;
   description: string;
-  art: string;
+  image: string;
+  imageAlt: string;
 };
 
 export type CalendarEvent = {
@@ -33,7 +34,7 @@ export const navItems = [
   ["Arena", "arena"],
   ["Mídia", "midia"],
   ["Ranking", "participacao"],
-  ["Times", "times"],
+  ["Turmas", "times"],
   ["Equipe", "equipe"],
 ] as const;
 
@@ -42,53 +43,81 @@ export const proposals = [
   {
     number: "01",
     icon: "↗",
-    title: "Quadra viva",
-    text: "Treinos abertos, campeonatos mistos e mais acesso aos espaços esportivos.",
-    tag: "Em movimento",
+    title: "Gincana",
+    text: "Três categorias: jogos digitais, físicos e mentais. Os professores acompanhariam os desafios para entender como cada aluno pensa e age. A partir dessa observação, poderiam adaptar as aulas e explorar novas formas de ensinar, ajudando cada um a aprender melhor e desenvolver seu potencial.",
+    tag: "Aprender participando",
   },
   {
     number: "02",
     icon: "◎",
-    title: "Mente em jogo",
-    text: "Xadrez, quiz, desafios de lógica e olimpíadas para todo tipo de talento.",
-    tag: "Próxima etapa",
+    title: "Caça ao tesouro",
+    text: "Na Páscoa, a tradicional caça aos ovos daria lugar a uma caça ao tesouro cheia de enigmas e charadas. Os professores também entrariam na brincadeira, fantasiados para tornar o dia ainda mais divertido e motivar a participação de todos.",
+    tag: "Páscoa com aventura",
   },
   {
     number: "03",
     icon: "⌁",
-    title: "Conecta escola",
-    text: "Calendário digital, central de avisos e resultados fáceis de acompanhar.",
-    tag: "Planejada",
+    title: "Eventos todos os meses",
+    text: "Um evento a cada mês, com acompanhamento da participação de cada turma e de cada aluno. No final do ano, a turma e a pessoa com maior participação receberiam um prêmio e ganhariam destaque aqui no site.",
+    tag: "Participação em destaque",
   },
   {
     number: "04",
     icon: "✦",
-    title: "Espaço do aluno",
-    text: "Mural de sugestões, rodas de conversa e devolutiva sobre cada proposta.",
-    tag: "Recebendo ideias",
+    title: "Casamento na festa junina",
+    text: "Um casamento de mentirinha na festa junina, com encenação, personagens e muita diversão. Uma brincadeira para reunir as turmas e entrar no clima do nosso arraiá.",
+    tag: "Tradição e diversão",
   },
   {
     number: "05",
     icon: "◌",
-    title: "Escola em cena",
-    text: "Cultura, música, talentos, oficinas e eventos que aproximam as turmas.",
-    tag: "Co-criação",
+    title: "Feirinha de livros",
+    text: "Uma feira com livros por até R$ 20 e um sistema de tickets para escolher e retirar os exemplares. A ideia é aproximar os alunos da leitura e facilitar o acesso a novas histórias.",
+    tag: "Mais leitura, mais histórias",
   },
   {
     number: "06",
     icon: "⊕",
-    title: "Bem-estar real",
-    text: "Acolhimento, campanhas de cuidado e intervalos mais leves e inclusivos.",
-    tag: "Prioridade",
+    title: "Festa para professores e funcionários",
+    text: "Uma comemoração em homenagem aos professores e a todos os trabalhadores da escola. Queremos reconhecer quem faz parte do nosso dia a dia e cuidar da comunidade escolar inteira, incluindo quem ensina, organiza e mantém tudo funcionando.",
+    tag: "Toda a escola importa",
+  },
+  {
+    number: "07",
+    icon: "✧",
+    title: "Festa à fantasia",
+    text: "Um Halloween diferente, com uma festa à fantasia para soltar a criatividade. A pessoa com a fantasia mais incrível receberia um prêmio, dando um toque especial à celebração.",
+    tag: "Criatividade no Halloween",
+  },
+  {
+    number: "08",
+    icon: "♡",
+    title: "Dia dos Namorados",
+    text: "Um baile de Dia dos Namorados com rei e rainha, além do tradicional correio elegante para trocar mensagens e deixar a data ainda mais especial.",
+    tag: "Baile e correio elegante",
   },
 ];
+
+// TURMAS: lista compartilhada pelo ranking, pelos cards e pelo formulário.
+export const schoolClasses = [
+  "1º A",
+  "1º B",
+  "1º C",
+  "2º DS",
+  "2º ADM",
+  "2º C",
+  "3º DS",
+  "3º ADM",
+  "3º VENDAS",
+  "3º D",
+] as const;
 
 // COMENTÁRIOS: mensagens que aparecem inicialmente no mural de sugestões.
 export const initialComments: Comment[] = [
   {
     initials: "AC",
     name: "Ana C.",
-    className: "2º B",
+    className: "2º ADM",
     message:
       "Gostaria de mais horários para usar a quadra e campeonatos mistos.",
   },
@@ -102,7 +131,7 @@ export const initialComments: Comment[] = [
   {
     initials: "BS",
     name: "Beatriz S.",
-    className: "3º C",
+    className: "3º VENDAS",
     message:
       "Quero acompanhar de um jeito simples quais propostas já estão acontecendo.",
   },
@@ -206,53 +235,57 @@ export const mediaItems: MediaItem[] = [
   {
     id: 1,
     category: "Esportes",
-    type: "Álbum · 28 fotos",
-    title: "Bastidores da Gincana Azul",
-    date: "28 AGO 2026",
+    type: "Imagem ilustrativa",
+    title: "Gincana Azul: todo mundo no jogo",
+    date: "PROPOSTA 2026",
     description:
-      "Energia, torcida e os melhores momentos da abertura da nossa gincana.",
-    art: "art-court",
+      "Uma ideia de como jogos, torcida e colaboração podem reunir as turmas na nossa gincana.",
+    image: "/images/media/gincana.png",
+    imageAlt: "Ilustração de uma gincana escolar com jogos e participação das turmas.",
   },
   {
     id: 2,
     category: "Esportes",
-    type: "Vídeo · 01:42",
+    type: "Imagem ilustrativa",
     title: "Treino aberto de vôlei",
-    date: "22 AGO 2026",
+    date: "PROPOSTA 2026",
     description:
-      "Um treino coletivo para descobrir talentos e montar os próximos times.",
-    art: "art-volley",
+      "Uma proposta de treino coletivo para descobrir talentos e aproximar os futuros times.",
+    image: "/images/media/volei.png",
+    imageAlt: "Ilustração de alunos jogando vôlei em uma quadra escolar.",
   },
   {
     id: 3,
     category: "Cultura",
-    type: "Galeria · 16 fotos",
+    type: "Imagem ilustrativa",
     title: "Mutirão criativo",
-    date: "16 AGO 2026",
+    date: "PROPOSTA 2026",
     description:
-      "Cartazes, ideias e muita colaboração para deixar a escola com a nossa cara.",
-    art: "art-creative",
+      "Cartazes, arte e colaboração: uma inspiração para deixar a escola com a cara dos alunos.",
+    image: "/images/media/criatividade.png",
+    imageAlt: "Ilustração de uma atividade criativa com cartazes e materiais de arte na escola.",
   },
   {
     id: 4,
     category: "Digital",
-    type: "Resumo · 60 segundos",
-    title: "O mês em movimento",
-    date: "02 AGO 2026",
+    type: "Imagem ilustrativa",
+    title: "Desafios digitais",
+    date: "PROPOSTA 2026",
     description:
-      "Tudo o que aconteceu, os próximos passos e como você pode participar.",
-    art: "art-digital",
+      "Tecnologia, estratégia e trabalho em equipe nos jogos digitais propostos para a gincana.",
+    image: "/images/media/digital.png",
+    imageAlt: "Ilustração de uma atividade de jogos digitais em equipe na escola.",
   },
 ];
 
-// RANKING DE TURMAS: pontuação e variação mostradas na participação.
-export const classRanking = [
-  { label: "3º A", value: 91, trend: "+8" },
-  { label: "2º A", value: 86, trend: "+5" },
-  { label: "1º A", value: 78, trend: "+4" },
-  { label: "2º B", value: 72, trend: "+2" },
-  { label: "1º B", value: 64, trend: "+6" },
-];
+// RANKING DE TURMAS: valores fictícios para a demonstração do painel.
+const demoParticipation = [91, 86, 82, 78, 74, 70, 67, 64, 60, 56];
+const demoTrends = [8, 5, 4, 6, 3, 2, 5, 4, 3, 2];
+export const classRanking = schoolClasses.map((label, index) => ({
+  label,
+  value: demoParticipation[index],
+  trend: `+${demoTrends[index]}`,
+}));
 
 // RANKING DE MODALIDADES: pontuação dos esportes na mesma seção.
 export const teamRanking = [
@@ -262,49 +295,16 @@ export const teamRanking = [
   { label: "Ping-pong", value: 69, trend: "+5" },
 ];
 
-// TIMES: informações dos times e classes de cor de cada card.
-export const schoolTeams = [
-  {
-    initials: "3DS",
-    name: "3DS",
-    sport: "Vôlei misto",
-    captain: "Representante · A definir",
-    record: "6 vitórias",
-    color: "team-cyan",
-  },
-  {
-    initials: "3A",
-    name: "3ADM",
-    sport: "Basquete",
-    captain: "Representante · A definir",
-    record: "4 vitórias",
-    color: "team-blue",
-  },
-  {
-    initials: "M2",
-    name: "M 2DS",
-    sport: "Futebol",
-    captain: "Representante · A definir",
-    record: "8 vitórias",
-    color: "team-violet",
-  },
-  {
-    initials: "1D",
-    name: "1D",
-    sport: "Tênis de mesa",
-    captain: "Representante · A definir",
-    record: "11 vitórias",
-    color: "team-electric",
-  },
-  {
-    initials: "2C",
-    name: "2C",
-    sport: "Gincana mista",
-    captain: "Representante · A definir",
-    record: "5 desafios",
-    color: "team-cobalt",
-  },
-];
+// TURMAS DA ESCOLA: todas as turmas podem participar das atividades.
+const teamColors = ["team-cyan", "team-blue", "team-violet", "team-electric", "team-cobalt"];
+export const schoolTeams = schoolClasses.map((name, index) => ({
+  initials: name.replace("º ", "").replace("VENDAS", "V"),
+  name,
+  sport: "Turma da escola",
+  captain: "Representante · A definir",
+  record: "Faça parte",
+  color: teamColors[index % teamColors.length],
+}));
 
 // EQUIPE: integrantes da chapa, cargos e identificações exibidos no site.
 export const teamMembers = [

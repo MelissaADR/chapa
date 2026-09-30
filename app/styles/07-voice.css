@@ -160,6 +160,7 @@
 }
 
 .idea-form input,
+.idea-form select,
 .idea-form textarea {
   width: 100%;
   border: 1px solid rgba(130, 200, 246, 0.14);
@@ -169,9 +170,22 @@
   transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
-.idea-form input {
+.idea-form input,
+.idea-form select {
   height: 49px;
   padding: 0 15px;
+}
+
+.idea-form select {
+  min-width: 0;
+  color: inherit;
+  font: inherit;
+  color-scheme: dark;
+}
+
+.idea-form select option {
+  color: #e8f4ff;
+  background: #06152e;
 }
 
 .idea-form textarea {
@@ -186,6 +200,7 @@
 }
 
 .idea-form input:focus,
+.idea-form select:focus,
 .idea-form textarea:focus {
   border-color: rgba(82, 218, 255, 0.56);
   background: rgba(3, 17, 42, 0.74);

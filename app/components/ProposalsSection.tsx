@@ -10,11 +10,11 @@ export function ProposalsSection({ onTilt, onTiltEnd }: TiltProps) {
       <div className="split-heading">
         <SectionTitle
           eyebrow="02 · NOSSO PLANO"
-          title="Ideias que podem virar realidade."
+          title="PROPOSTAS"
         />
         <p data-reveal>
-          Propostas vivas: você acompanha, comenta e ajuda a construir cada
-          próxima etapa.
+          Oito ideias para aprender, se divertir e valorizar toda a escola.
+          Conheça o que queremos construir com você.
         </p>
       </div>
       <div className="proposal-grid">

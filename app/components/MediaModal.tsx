@@ -13,22 +13,18 @@ export function MediaModal({ activeMedia, modalRef, onClose }: MediaModalProps) 
 
   return (
     <div className="modal-backdrop">
-      <button className="modal-dismiss" type="button" onClick={onClose} aria-label="Fechar cobertura" />
+      <button className="modal-dismiss" type="button" onClick={onClose} aria-label="Fechar imagem" />
       <div ref={modalRef} className="media-modal" role="dialog" aria-modal="true" aria-labelledby="media-modal-title" aria-describedby="media-modal-description">
-        <button className="modal-close" type="button" onClick={onClose} aria-label="Fechar cobertura">×</button>
-        <div className={`modal-art media-art ${activeMedia.art}`}>
-          <span className="art-grid" />
-          <span className="art-orbit" />
-          <span className="media-art-code">AZUL.MEDIA / 0{activeMedia.id}</span>
+        <button className="modal-close" type="button" onClick={onClose} aria-label="Fechar imagem">×</button>
+        <div className="modal-art media-art">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="media-image" src={activeMedia.image} alt={activeMedia.imageAlt} width={1672} height={941} />
         </div>
         <div className="modal-copy">
           <span>{activeMedia.category} · {activeMedia.date}</span>
           <h2 id="media-modal-title">{activeMedia.title}</h2>
           <p id="media-modal-description">{activeMedia.description}</p>
-          <div className="modal-placeholder">
-            <i>+</i>
-            <span>Espaço pronto para receber as fotos e vídeos oficiais do evento.</span>
-          </div>
+          <p className="media-image-note">Ilustração criada para apresentar as ideias da Chapa Azul.</p>
         </div>
       </div>
     </div>

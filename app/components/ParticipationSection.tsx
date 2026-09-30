@@ -14,8 +14,6 @@ type ParticipationSectionProps = TiltProps & {
 export function ParticipationSection({
   rankingView,
   onRankingViewChange,
-  onTilt,
-  onTiltEnd,
 }: ParticipationSectionProps) {
   const currentRanking = rankingView === "turmas" ? classRanking : teamRanking;
 
@@ -54,28 +52,6 @@ export function ParticipationSection({
                 </div>
               ))}
             </div>
-          </div>
-
-          <aside className="spotlight-card tilt-card" data-reveal onPointerMove={onTilt} onPointerLeave={onTiltEnd}>
-            <div className="spotlight-top">
-              <span>DESTAQUE DO MÊS</span>
-              <i>★</i>
-            </div>
-            <div className="spotlight-avatar"><span>JM</span><i /></div>
-            <h3>Júlia M.</h3>
-            <p>2º A · Participou de <strong>7 eventos</strong></p>
-            <div className="spotlight-stats">
-              <div><strong>04</strong><span>modalidades</span></div>
-              <div><strong>21h</strong><span>em ação</span></div>
-            </div>
-            <span className="spotlight-note">Participação registrada com autorização.</span>
-          </aside>
-
-          <div className="summary-strip" data-reveal>
-            <div><strong>312</strong><span>participações registradas</span></div>
-            <div><strong>14</strong><span>equipes ativas</span></div>
-            <div><strong>08</strong><span>eventos realizados</span></div>
-            <div><strong>+24%</strong><span>adesão este mês</span></div>
           </div>
         </div>
       </div>
