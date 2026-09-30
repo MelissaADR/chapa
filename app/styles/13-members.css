@@ -1,20 +1,6 @@
-/* INTEGRANTES DA CHAPA — Aviso demonstrativo, grade de membros, cartões, avatares, cargos e situação. */
+/* REPRESENTANTES DA CHAPA — Grade de membros, cartões, avatares, nomes e turmas. */
 .team-section > .section-heading {
-  margin-bottom: 18px;
-}
-
-.demo-note {
-  display: inline-flex;
-  margin-bottom: 34px;
-  padding: 8px 11px;
-  border: 1px solid rgba(120, 211, 255, 0.13);
-  border-radius: 999px;
-  color: #7893b1;
-  background: rgba(39, 112, 255, 0.05);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 7px;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  margin-bottom: 40px;
 }
 
 .member-grid {
@@ -95,6 +81,7 @@
   margin-bottom: 6px;
   font-size: 17px;
   letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
 }
 
 .member-card > p {

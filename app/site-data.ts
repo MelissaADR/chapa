@@ -306,12 +306,19 @@ export const schoolTeams = schoolClasses.map((name, index) => ({
   color: teamColors[index % teamColors.length],
 }));
 
-// EQUIPE: integrantes da chapa, cargos e identificações exibidos no site.
+// REPRESENTANTES: nomes e turmas dos integrantes da Chapa Azul.
 export const teamMembers = [
-  { initials: "N1", name: "Nome 1", role: "Presidência", code: "01" },
-  { initials: "N2", name: "Nome 2", role: "Vice-presidência", code: "02" },
-  { initials: "N3", name: "Nome 3", role: "Comunicação", code: "03" },
-  { initials: "N4", name: "Nome 4", role: "Esportes e gincanas", code: "04" },
-  { initials: "N5", name: "Nome 5", role: "Cultura e inclusão", code: "05" },
-  { initials: "N6", name: "Nome 6", role: "Tecnologia e mídia", code: "06" },
+  { initials: "PC", name: "Pyter Carvalho", className: "2º DS", code: "01" },
+  { initials: "NM", name: "Nicolle de Morais", className: "2º DS", code: "02" },
+  { initials: "AL", name: "Alexandre Lira de Oliveira", className: "2º DS", code: "03" },
+  { initials: "RC", name: "Raul Costa", className: "2º DS", code: "04" },
+  { initials: "ME", name: "Maria Eduarda da Costa", className: "2º DS", code: "05" },
+  { initials: "SB", name: "Sofia Barbosa", className: "2º C", code: "06" },
+  { initials: "IM", name: "Iam Mendes", className: "1º A", code: "07" },
+];
+
+// DESENVOLVIMENTO: créditos exibidos no rodapé do site.
+export const siteDevelopers = [
+  { name: "Melissa Almeida", className: "3º DS" },
+  { name: "Pyter Carvalho", className: "2º DS" },
 ];

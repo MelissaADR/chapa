@@ -88,6 +88,7 @@
 }
 
 .site-footer {
+  position: relative;
   display: grid;
   min-height: 150px;
   grid-template-columns: 1fr auto auto;
@@ -119,6 +120,52 @@
 .back-top {
   border-radius: 50%;
   color: var(--cyan);
+}
+
+.footer-credits {
+  display: flex;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid rgba(122, 202, 251, 0.1);
+}
+
+.footer-credits p {
+  margin: 0;
+  color: var(--cyan);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.footer-credits ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.footer-credits strong {
+  color: #c7d9ed;
+  font-weight: 600;
+}
+
+.footer-credits span {
+  color: #91a8c2;
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .footer-credits {
+    padding-right: 64px;
+  }
 }
 
 .modal-backdrop {
