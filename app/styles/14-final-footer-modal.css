@@ -109,7 +109,7 @@
 
 .footer-links a {
   color: #7891ad;
-  font-size: 10px;
+  font-size: 12px;
   transition: color 180ms ease;
 }
 
@@ -137,7 +137,7 @@
 .footer-credits p {
   margin: 0;
   color: var(--cyan);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.6;
 }
 
@@ -148,7 +148,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
@@ -249,12 +249,12 @@
 
 .modal-copy > p {
   color: #91a8c2;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.65;
 }
 
 .modal-copy .media-image-note {
   margin-bottom: 0;
   color: #6e89a7;
-  font-size: 11px;
+  font-size: 12px;
 }

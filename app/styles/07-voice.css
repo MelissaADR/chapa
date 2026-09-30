@@ -47,7 +47,7 @@
   color: #dffaff;
   background: linear-gradient(145deg, rgba(43, 111, 255, 0.55), rgba(7, 36, 87, 0.76));
   font-family: var(--font-geist-mono), monospace;
-  font-size: 10px;
+  font-size: 12px;
   box-shadow: 0 8px 24px rgba(19, 89, 231, 0.18);
 }
 
@@ -59,7 +59,7 @@
 }
 
 .comment-meta strong {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .comment-meta span {
@@ -69,13 +69,13 @@
   color: var(--cyan);
   background: rgba(38, 127, 255, 0.08);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 7px;
+  font-size: 10px;
 }
 
 .comment-card p {
   margin-bottom: 0;
   color: #9eb1c9;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.55;
 }
 
@@ -109,7 +109,7 @@
   margin-bottom: 38px;
   color: var(--cyan);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.14em;
 }
 
@@ -125,7 +125,7 @@
   max-width: 480px;
   margin-bottom: 12px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
@@ -134,7 +134,7 @@
   margin-bottom: 28px;
   color: #647e9d;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.5;
 }
 
@@ -148,7 +148,7 @@
 .idea-form label > span {
   color: #8ba4c1;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.09em;
   text-transform: uppercase;
 }
@@ -217,7 +217,7 @@
 .form-bottom > span {
   color: #5d7694;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .form-success {
@@ -227,7 +227,7 @@
   gap: 9px;
   overflow: hidden;
   color: var(--mint);
-  font-size: 11px;
+  font-size: 12px;
   opacity: 0;
   translate: 0 8px;
   transition: max-height 250ms ease, opacity 250ms ease, translate 250ms ease, margin 250ms ease;

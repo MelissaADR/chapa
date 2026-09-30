@@ -38,7 +38,7 @@
   margin-bottom: 18px;
   color: var(--cyan);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.16em;
 }
 
@@ -56,7 +56,7 @@
 .arena-heading p {
   color: #8099b7;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -122,7 +122,7 @@
   right: 22px;
   color: #6884a5;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .sport-card h3 {
@@ -138,7 +138,7 @@
   z-index: 2;
   margin-bottom: 24px;
   color: #839ab6;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .sport-slots {
@@ -149,7 +149,7 @@
   gap: 7px;
   color: #7390af;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 8px;
+  font-size: 10px;
   text-transform: uppercase;
 }
 
@@ -226,7 +226,7 @@
 .prize-banner p {
   margin-bottom: 0;
   color: rgba(225, 241, 255, 0.72);
-  font-size: 9px;
+  font-size: 11px;
 }
 
 .button-light {
@@ -283,13 +283,13 @@
 .game-index {
   color: #587493;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .game-card small {
   color: var(--cyan);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.11em;
 }
 
@@ -302,7 +302,7 @@
 .game-card p {
   margin: 0;
   color: #7891ad;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.55;
 }
 

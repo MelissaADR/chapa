@@ -20,7 +20,7 @@
   color: #8bc6b8;
   background: rgba(95, 255, 210, 0.04);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.09em;
 }
 
@@ -80,11 +80,11 @@
 .rank-position {
   color: #536d8c;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .ranking-row > strong {
-  font-size: 12px;
+  font-size: 14px;
   white-space: nowrap;
 }
 
@@ -111,7 +111,7 @@
 .rank-value {
   color: #dff8ff;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 650;
   text-align: right;
 }
@@ -119,7 +119,7 @@
 .ranking-row small {
   color: var(--mint);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 7px;
+  font-size: 10px;
   text-align: right;
 }
 

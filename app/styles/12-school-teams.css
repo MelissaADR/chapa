@@ -80,7 +80,7 @@
 .team-copy > span {
   color: var(--team-color);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.11em;
   text-transform: uppercase;
 }
@@ -95,7 +95,7 @@
 .team-copy p {
   margin-bottom: 0;
   color: #758eaa;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .team-record {
@@ -107,7 +107,7 @@
   gap: 6px;
   color: #758eaa;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 7px;
+  font-size: 10px;
   text-transform: uppercase;
 }
 
@@ -139,6 +139,6 @@
   }
 
   .teams-section .team-crest span {
-    font-size: 11px;
+    font-size: 12px;
   }
 }

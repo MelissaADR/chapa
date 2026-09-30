@@ -102,7 +102,7 @@ textarea:focus-visible {
   border-radius: 10px;
   color: #031331;
   background: var(--cyan);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 750;
   translate: 0 -150%;
   transition: translate 180ms ease;

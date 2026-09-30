@@ -44,7 +44,7 @@
   display: block;
   color: #57718f;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-align: left;
 }
@@ -89,7 +89,7 @@
   z-index: 2;
   margin-bottom: 18px;
   color: #7790ad;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .member-status {
@@ -100,7 +100,7 @@
   gap: 6px;
   color: #6984a2;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 7px;
+  font-size: 10px;
 }
 
 .member-status i {

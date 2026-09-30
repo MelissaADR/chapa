@@ -82,7 +82,7 @@
 .pixel-lockup small {
   color: var(--muted);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -97,7 +97,7 @@
   position: relative;
   padding: 11px 12px;
   color: #91a7c4;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 650;
   transition: color 180ms ease;
 }
@@ -137,7 +137,7 @@
   gap: 10px;
   overflow: hidden;
   border-radius: 12px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 760;
   letter-spacing: -0.01em;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
